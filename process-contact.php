@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session to carry error messages
+
 // Include database configuration
 include 'includes/config.php';
 
@@ -9,12 +11,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
     $message = trim($_POST["message"]);
 
-    // Basic validation (for example purposes only)
-    if (empty($name) || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($message)) {
-        // Redirect back to contact form with an error message
-        // In a real application, you might want to use a more user-friendly error reporting system
-        echo "Please fill out the form correctly.";
-        exit;
+    // Basic validation
+    if (empty($name)) {
+        $_SESSION['error'] = 'Name is required.';
+        header('Location: contact.php');
+        exit();
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $_SESSION['error'] = 'Invalid email format.';
+        header('Location: contact.php');
+        exit();
+    } elseif (empty($message)) {
+        $_SESSION['error'] = 'Message is required.';
+        header('Location: contact.php');
+        exit();
     }
 
     // Prepare SQL statement to insert form data into the 'contact_messages' table
@@ -31,14 +40,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Execute the statement
         $stmt->execute();
 
-        // Redirect to a new page or display a success message
-        echo "Thank you for contacting us. We will be in touch soon.";
+        // Redirect to a thank-you page
+        header('Location: thank-you.php');
+        exit();
     } catch (PDOException $e) {
-        // Handle potential errors here
-        die("Error: " . $e->getMessage());
+        // Log the error and set an error message
+        error_log($e->getMessage());
+        $_SESSION['error'] = 'There was an error processing your message. Please try again.';
+        header('Location: contact.php');
+        exit();
     }
 } else {
-    // Not a POST request
-    echo "There was a problem with your submission. Please try again.";
+    // Set an error message for requests not using POST
+    $_SESSION['error'] = 'There was a problem with your submission. Please try again.';
+    header('Location: contact.php');
+    exit();
 }
 ?>
