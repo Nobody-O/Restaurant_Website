@@ -42,7 +42,8 @@
 <div class="container mt-5">
     <h1>Contact Us</h1>
     <p>If you have any questions, please don't hesitate to reach out to us.</p>
-    <form action="send-message.php" method="POST">
+    <!-- Update the action attribute to "process-contact.php" -->
+    <form action="process-contact.php" method="POST">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" id="name" name="name" required>
