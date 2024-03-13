@@ -104,6 +104,8 @@ p {
 
 .fade-in.animate {
     opacity: 1;
+    transition: opacity 2s ease-out;
+    animation: fadeIn 2s ease-out;
 }
 
 .fade-out {
