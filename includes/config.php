@@ -1,9 +1,9 @@
 <?php
 // Database credentials
-$host = 'your_database_host';
-$dbname = 'restaurant_db';
-$username = 'your_database_username';
-$password = 'your_database_password';
+$host = 'sql306.infinityfree.com';
+$dbname = 'if0_35973697_restaurant_db';
+$username = 'if0_35973697';
+$password = 'Odys2003Seas';
 
 // Create a new PDO instance
 try {
