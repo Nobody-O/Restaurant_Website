@@ -92,8 +92,24 @@ p {
     100% { opacity: 1; }
 }
 
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
 .fade-in {
     animation: fadeIn 2s ease-out;
+    opacity: 0;
+    transition: opacity 2s ease-out;
+}
+
+.fade-in.animate {
+    opacity: 1;
+}
+
+.fade-out {
+    animation: fadeOut 2s ease-out;
+    opacity: 1;
+    transition: opacity 2s ease-out;
 }
 
 /* Utility Classes */
@@ -121,4 +137,8 @@ p {
     .nav-link {
         margin: 0.5rem 0;
     }
+}
+
+.navbar.nav-active {
+    background-color: var(--primary-color); /* Change navbar color on scroll */
 }
