@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'includes/header.php'; // Ensure this path is correct ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,55 +41,43 @@
 <!-- Menu Content -->
 <div class="container mt-5">
     <h1>Our Menu</h1>
-    <p>Discover our lovingly curated dishes.</p>
-    
-    <!-- Appetizers -->
-    <h2>Appetizers</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <h3>Bruschetta</h3>
-            <p>Tomato, basil, onion, and mozzarella on toasted bread.</p>
-            <p>$8.99</p>
-        </div>
-        <!-- Add more appetizers here -->
-    </div>
-    
-    <!-- Main Courses -->
-    <h2>Main Courses</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <h3>Lasagna</h3>
-            <p>Layers of pasta, homemade sauce, beef, and cheese.</p>
-            <p>$14.99</p>
-        </div>
-        <!-- Add more main courses here -->
-    </div>
-    
-    <!-- Desserts -->
-    <h2>Desserts</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <h3>Tiramisu</h3>
-            <p>Classic Italian dessert made with espresso-soaked ladyfingers and mascarpone cheese.</p>
-            <p>$6.99</p>
-        </div>
-        <!-- Add more desserts here -->
-    </div>
-    
-    <!-- Beverages -->
-    <h2>Beverages</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <h3>Italian Coffee</h3>
-            <p>Rich espresso blend, served hot or iced.</p>
-            <p>$3.99</p>
-        </div>
-        <!-- Add more beverages here -->
-    </div>
+    <?php
+    require 'includes/config.php'; // Ensure this path is correct and the config file is set up properly
+
+    try {
+        $sql = "SELECT * FROM menu_items ORDER BY category, name";
+        $result = $pdo->query($sql);
+        
+        if ($result->rowCount() > 0) {
+            $currentCategory = null;
+            while ($row = $result->fetch()) {
+                if ($row['category'] !== $currentCategory) {
+                    if ($currentCategory !== null) echo "</div>"; // Close previous category div if not first category
+                    echo "<h2>" . htmlspecialchars($row['category']) . "</h2><div class='menu-category'>";
+                    $currentCategory = $row['category'];
+                }
+                
+                echo "<div class='menu-item'>";
+                echo "<h3>" . htmlspecialchars($row['name']) . " - $" . number_format($row['price'], 2) . "</h3>";
+                if (!empty($row['image_url'])) {
+                    // The image URL should be a relative path to where the images are stored on your server
+                    echo "<img src='" . htmlspecialchars($row['image_url']) . "' alt='" . htmlspecialchars($row['name']) . "' class='menu-item-image'>";
+                }
+                echo "<p>" . htmlspecialchars($row['description']) . "</p>";
+                echo "</div>";
+            }
+            if ($currentCategory !== null) echo "</div>"; // Close the last category div
+        } else {
+            echo "<p>No menu items found.</p>";
+        }
+    } catch (PDOException $e) {
+        die("ERROR: Could not able to execute $sql. " . $e->getMessage());
+    }
+    ?>
 </div>
 
 <!-- Footer -->
-<?php include 'includes/footer.php'; ?>
+<?php include 'includes/footer.php'; // Ensure this path is correct ?>
 
 <script src="assets/js/jquery-3.5.1.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
