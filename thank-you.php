@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; // Make sure this path is correct ?>
+<?php include 'includes/header.php';  ?>
 
 <!DOCTYPE html>
 <html lang="en">
