@@ -41,19 +41,17 @@
 <!-- About Content -->
 <div class="container mt-5">
     <h1>About Us</h1>
-    <p>This is where you can tell the story of your restaurant. Talk about how it started, the idea behind it, what makes it special, and any awards or recognitions you've received. It's also a great place to introduce your team.</p>
+    <p> Here We need to change this and put about us information like the story of the restaurant  how it started the idea  what makes it special and any awards for recognition
+    </p>
     
-    <!-- Example Section: History -->
     <h2>Our History</h2>
-    <p>Share the history of your restaurant here. When was it founded? What inspired you to start it? How has it grown or changed over the years?</p>
+    <p> history of the restaurant here. When was it founded? What inspired you to start it? How has it grown or changed over the years?</p>
     
-    <!-- Example Section: Our Team -->
     <h2>Meet the Team</h2>
-    <p>Introduce your key team members. This could include chefs, managers, and anyone else who plays a significant role in your restaurant's success.</p>
+    <p>Introduce key team members. include chefs, managers, and anyone else who plays a significant role in your restaurant's success.</p>
     
-    <!-- Example Section: Our Vision -->
     <h2>Our Vision</h2>
-    <p>What are your goals and aspirations for the restaurant? What unique experiences do you strive to provide your guests?</p>
+    <p> goals and aspirations for the restaurant? What unique experiences we strive to provide our guests?</p>
 </div>
 
 <!-- Footer -->
