@@ -41,14 +41,21 @@
 <!-- About Content -->
 <div class="container mt-5">
     <h1>About Us</h1>
-    <p> Here We need to change this and put about us information like the story of the restaurant  how it started the idea  what makes it special and any awards for recognition
-    </p>
+    <p> Our restaurant have a deep histroy going back to 1970's, it started as a small buisness and started to pick up popularity around the 2000's due to our respectable selection of dishes and on top of all our attention to detail and love for every dish.
     
     <h2>Our History</h2>
-    <p> history of the restaurant here. When was it founded? What inspired you to start it? How has it grown or changed over the years?</p>
+    <p> The history of this restaurant started in 1970 when we were inspired to make an affordable, delicious and affordable options while not overwealming the customers with a too wide selection of dishes
+      but the real reccognition started in the 2000's as we have perfected this formula and decided to go into upper potential of our restaurant.
+    </p>
     
     <h2>Meet the Team</h2>
-    <p>Introduce key team members. include chefs, managers, and anyone else who plays a significant role in your restaurant's success.</p>
+    <p> key team members. Including chefs, staff , manager and anyone else who plays a significant role in your restaurant's success.
+      <img src="chefantonio.jpg"> <alt="HeadChef">
+      <img src="chefrosa.jpg"> <alt="HeadChef">
+      <img src="emily.jpg"> <alt="Waiter">
+      <img src="joch.jpg"> <alt="Waiter">
+      <img src="marco.jpeg"> <alt="Waiter">
+    </p>
     
     <h2>Our Vision</h2>
     <p> goals and aspirations for the restaurant? What unique experiences we strive to provide our guests?</p>

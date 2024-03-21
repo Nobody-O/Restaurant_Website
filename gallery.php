@@ -3,7 +3,7 @@
 <!-- Gallery Content -->
 <div class="container mt-5">
     <h1 class="text-center">Our Gallery</h1>
-    <p class="text-center">Take a look at our beautiful restaurant and delicious dishes.</p>
+    <p class="text-center">Explore your options with our wide selection of dishes.</p>
     <div class="row">
         <?php
         $galleryItems = [

@@ -7,18 +7,18 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    color: #333;
-    background-color: #fff;
+    color: #ffffff;
+    background-color: #2c0606;
     line-height: 1.6;
     padding-top: 60px; /* Adjust based on your navbar height */
 }
 
 /* Root Variables */
 :root {
-    --primary-color: #A52A2A; /* Deep red, similar to Sono's theme */
+    --primary-color: #f0eeee; /* Deep red, similar to Sono's theme */
     --secondary-color: #333;
     --light-color: #f4f4f4;
-    --dark-color: #222;
+    --dark-color: #c27171;
 }
 
 /* Typography */
