@@ -3,7 +3,7 @@
 $host = 'localhost';   //sql306.infinityfree.com
 $dbname = 'restaurant_db'; //if0_35973697_restaurant_db
 $username = 'root'; //if0_35973697
-$password = ''; //Odys2003Seas
+$password = ''; // my password
 
 // Create a new PDO instance
 try {
