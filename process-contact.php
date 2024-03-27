@@ -40,9 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Execute the statement
         $stmt->execute();
 
-        // Redirect to a thank-you page
-        header('Location: thank-you.php');
-        exit();
+         // Redirect to a thank-you page with success message
+         $_SESSION['success'] = 'Your reservation has been successfully submitted.';
+         header('Location: thank-you.php');
+         exit();
+         
     } catch (PDOException $e) {
         // Log the error and set an error message
         error_log($e->getMessage());

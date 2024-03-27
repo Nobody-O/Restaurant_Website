@@ -22,7 +22,7 @@
     </p>
     
         <h2>Our Vision</h2>
-    <p> goals and aspirations for the restaurant? What unique experiences we strive to provide our guests?</p>
+    <p> Shit bro im blind </p>
 
     <!-- Meet the Team -->
     <h2>Meet the Team</h2>
@@ -34,7 +34,7 @@
           ['name' => '         Chef Rosa', 'image' => 'assets/img/chefrosa.jpg'],
           ['name' => '         Emily', 'image' => 'assets/img/emily.jpg'],
           ['name' => '         Joch', 'image' => 'assets/img/joch.jpg'],
-          ['name' => 'Macro', 'image' => 'assets/img/macro.jpeg'],
+          ['name' => 'Rodriko', 'image' => 'assets/img/rodriko.png'],
           ['name' => 'Hottie of the restaurant', 'image' => 'assets/img/restaurant-manager-chef.jpg']
         ];
         
