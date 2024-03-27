@@ -29,9 +29,7 @@
     <div class="team-container">
       <?php
         // PHP code to fetch team members data
-        // You should replace this with your actual database fetching logic
         $chefs = [
-          // Example array, replace with actual data
           ['name' => 'Chef Antonio', 'image' => 'assets/img/chefantonio.jpg'],
           ['name' => '         Chef Rosa', 'image' => 'assets/img/chefrosa.jpg'],
           ['name' => '         Emily', 'image' => 'assets/img/emily.jpg'],
