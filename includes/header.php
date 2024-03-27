@@ -23,12 +23,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="menu.php">Menu</a>
             </li>
-            <!-- Add other navigation items here -->
             <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="about.php">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reservation.php">Reservation</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gallery.php">Gallery</a>
             </li>
         </ul>
     </div>
