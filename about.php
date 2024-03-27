@@ -26,11 +26,11 @@
     
     <h2>Meet the Team</h2>
     <p> key team members. Including chefs, staff , manager and anyone else who plays a significant role in your restaurant's success.
-      <img src="chefantonio.jpg"> <alt="HeadChef">
-      <img src="chefrosa.jpg"> <alt="HeadChef">
-      <img src="emily.jpg"> <alt="Waiter">
-      <img src="joch.jpg"> <alt="Waiter">
-      <img src="marco.jpeg"> <alt="Waiter">
+      <img src="assets/img/chefantonio.jpg"> <alt="HeadChef">
+      <img src="assets/img/chefrosa.jpg"> <alt="HeadChef">
+      <img src="assets/img/emily.jpg"> <alt="Waiter">
+      <img src="assets/img/joch.jpg"> <alt="Waiter">
+      <img src="assets/img/marco.jpeg"> <alt="Waiter">
     </p>
 </div>
 
