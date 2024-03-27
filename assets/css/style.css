@@ -144,3 +144,30 @@ p {
 .navbar.nav-active {
     background-color: var(--primary-color); /* Change navbar color on scroll */
 }
+
+/* "Meet the Team" section styles */
+.team-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    gap: 20px; /* Adjust space between images */
+    overflow-x: auto; /* Enable horizontal scroll */
+    padding: 20px 0; /* Padding above and below */
+  }
+  
+  .chef {
+    flex: 0 0 auto; /* Prevent chefs from stretching */
+    margin-right: 20px; /* Space to the right of each chef */
+  }
+  
+  .chef img {
+    max-width: 100%; /* Ensure images are responsive */
+    max-height: 200px; /* Limit the height */
+    object-fit: cover; /* Ensure the aspect ratio is maintained without distortion */
+    border-radius: 50%; /* Circular images; remove if you prefer square/rectangle */
+  }
+  
+  .chef-name {
+    font-size: 1rem; /* Adjust font size as needed */
+    margin-top: 10px; /* Space between image and name */
+  }
+  
