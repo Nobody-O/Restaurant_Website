@@ -11,33 +11,6 @@
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Restaurant Name</a>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="menu.php">Menu</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="reservation.php">Reservation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="gallery.php">Gallery</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="contact.php">Contact <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.php">About</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
 <!-- Contact Form -->
 <div class="container mt-5">
     <h1>Contact Us</h1>
