@@ -20,18 +20,34 @@
     <p> The history of this restaurant started in 1970 when we were inspired to make an affordable, delicious and affordable options while not overwealming the customers with a too wide selection of dishes
       but the real reccognition started in the 2000's as we have perfected this formula and decided to go into upper potential of our restaurant.
     </p>
-
+    
         <h2>Our Vision</h2>
     <p> goals and aspirations for the restaurant? What unique experiences we strive to provide our guests?</p>
-    
+
+    <!-- Meet the Team -->
     <h2>Meet the Team</h2>
-    <p> key team members. Including chefs, staff , manager and anyone else who plays a significant role in your restaurant's success.
-      <img src="assets/img/chefantonio.jpg"> <alt="HeadChef">
-      <img src="assets/img/chefrosa.jpg"> <alt="HeadChef">
-      <img src="assets/img/emily.jpg"> <alt="Waiter">
-      <img src="assets/img/joch.jpg"> <alt="Waiter">
-      <img src="assets/img/marco.jpeg"> <alt="Waiter">
-    </p>
+    <div class="team-container">
+      <?php
+        // PHP code to fetch team members data
+        // You should replace this with your actual database fetching logic
+        $chefs = [
+          // Example array, replace with actual data
+          ['name' => 'Chef Antonio', 'image' => 'assets/img/chefantonio.jpg'],
+          ['name' => '         Chef Rosa', 'image' => 'assets/img/chefrosa.jpg'],
+          ['name' => '         Emily', 'image' => 'assets/img/emily.jpg'],
+          ['name' => '         Joch', 'image' => 'assets/img/joch.jpg'],
+          ['name' => 'Macro', 'image' => 'assets/img/macro.jpeg'],
+          ['name' => 'Hottie of the restaurant', 'image' => 'assets/img/restaurant-manager-chef.jpg']
+        ];
+        
+        foreach ($chefs as $chef) {
+            echo '<div class="chef">';
+            echo '<img src="' . htmlspecialchars($chef['image']) . '" alt="' . htmlspecialchars($chef['name']) . '" />';
+            echo '<div class="chef-name">' . htmlspecialchars($chef['name']) . '</div>';
+            echo '</div>';
+        }
+      ?>
+    </div>
 </div>
 
 <!-- Footer -->
