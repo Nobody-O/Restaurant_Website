@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
-        <span>&copy; 2024 Restaurant Name. All rights reserved.</span>
+        <span>&copy; 2024 KanenasO-Aggelos3111. All rights reserved.</span>
     </div>
 </footer>
 
