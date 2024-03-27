@@ -20,6 +20,9 @@
     <p> The history of this restaurant started in 1970 when we were inspired to make an affordable, delicious and affordable options while not overwealming the customers with a too wide selection of dishes
       but the real reccognition started in the 2000's as we have perfected this formula and decided to go into upper potential of our restaurant.
     </p>
+
+        <h2>Our Vision</h2>
+    <p> goals and aspirations for the restaurant? What unique experiences we strive to provide our guests?</p>
     
     <h2>Meet the Team</h2>
     <p> key team members. Including chefs, staff , manager and anyone else who plays a significant role in your restaurant's success.
@@ -29,9 +32,6 @@
       <img src="joch.jpg"> <alt="Waiter">
       <img src="marco.jpeg"> <alt="Waiter">
     </p>
-    
-    <h2>Our Vision</h2>
-    <p> goals and aspirations for the restaurant? What unique experiences we strive to provide our guests?</p>
 </div>
 
 <!-- Footer -->
