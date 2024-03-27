@@ -11,22 +11,6 @@
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Restaurant Name</a>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="menu.php">Menu</a>
-      </li>
-      <!-- Add other navigation items here -->
-    </ul>
-  </div>
-</nav>
-
 <!-- Thank You Content -->
 <div class="container mt-5">
     <h1>Thank You!</h1>
