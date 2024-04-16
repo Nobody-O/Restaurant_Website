@@ -57,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['success'] = 'Your reservation has been successfully submitted.';
         header('Location: thank-you.php');
         exit();
+        
     } catch (PDOException $e) {
         // Log the error and set an error message
         error_log($e->getMessage());
@@ -70,3 +71,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Location: reservation.php');
     exit();
 }
+?>
