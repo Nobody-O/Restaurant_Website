@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
 
          // Redirect to a thank-you page with success message
-         $_SESSION['success'] = 'Your reservation has been successfully submitted.';
+         $_SESSION['success'] = 'Your message has been successfully submitted.';
          header('Location: thank-you.php');
          exit();
          
