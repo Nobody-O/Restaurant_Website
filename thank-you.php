@@ -1,4 +1,4 @@
-<?php include 'includes/header.php';  ?>
+<?php include 'includes/header.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@
 </div>
 
 <!-- Footer -->
-<?php include 'includes/footer.php'; // Make sure this path is correct ?>
+<?php include 'includes/footer.php'; ?>
 
 <script src="assets/js/jquery-3.5.1.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
