@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-lg-6 col-md-6">
         <h5>Contact Info</h5>
-        <p>Address: Your address here</p>
+        <p>Address: restaurant address not yet placed</p>
         <p>Phone: +1 234 567 890</p>
         <p>Email: contact@restaurant.com</p>
       </div>
