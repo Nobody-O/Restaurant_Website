@@ -120,8 +120,9 @@ if (contactForm) {
         else if (!message) errorMessage = 'Message is required.';
 
         if (errorMessage) {
-            alert(errorMessage);
-            return false;
+            const errorDiv = document.getElementById('error-message');
+            errorDiv.textContent = errorMessage;
+            errorDiv.style.display = 'block';
         } else {
             contactForm.submit();
         }
@@ -137,3 +138,45 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('nav-active');
     }
 });
+
+// Adding ARIA roles
+const carousel = document.getElementById('homeCarousel');
+carousel.setAttribute('role', 'region');
+carousel.setAttribute('aria-label', 'Image Carousel');
+
+// Adding keyboard controls
+document.querySelector('.carousel-control-prev').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        prevImage();
+    }
+});
+
+document.querySelector('.carousel-control-next').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        nextImage();
+    }
+});
+
+document.querySelectorAll('.menu-item img').forEach(image => {
+    image.addEventListener('click', () => {
+        const lightbox = document.createElement('div');
+        lightbox.id = 'lightbox';
+        document.body.appendChild(lightbox);
+        const img = document.createElement('img');
+        img.src = image.src;
+        lightbox.appendChild(img);
+
+        // Close lightbox on click
+        lightbox.addEventListener('click', () => {
+            lightbox.remove();
+        });
+
+        // Close lightbox on 'Esc' key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.remove();
+            }
+        });
+    });
+});
+
