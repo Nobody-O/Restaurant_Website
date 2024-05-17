@@ -1,12 +1,11 @@
 /* Root Variables */
 :root {
-    --text-color: #f0f0f0; /* Light color for text and elements */
+    --text-color: #f0f0f0;
     --background-color: #333;
-    --primary-bg-color: #000; /* Black background color */
-    --secondary-bg-color: #1a1a1a; /* Darker color for sections */
-    --highlight-color: #f8b400; /* Gold color for highlights */
+    --primary-bg-color: #000;
+    --secondary-bg-color: #1a1a1a;
+    --highlight-color: #f8b400;
 }
-
 
 /* Basic Reset */
 * {
@@ -17,16 +16,16 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    color: var(--primary-color);
-    background-color: var(--light-color);
+    color: var(--text-color);
+    background-color: var(--background-color);
     line-height: 1.6;
-    padding-top: 60px; /* Adjust based on your navbar height */
+    padding-top: 60px;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
-    color: var(--primary-color);
+    color: var(--text-color);
     margin-bottom: 0.5rem;
 }
 
@@ -36,19 +35,19 @@ p {
 
 /* Navigation */
 .navbar {
-    background-color: var(--dark-color);
+    background-color: var(--primary-bg-color);
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
 .navbar a.nav-link {
-    color: var(--primary-color);
+    color: var(--text-color);
     margin-left: 1rem;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -72,12 +71,12 @@ p {
 }
 
 .btn:hover {
-    background-color: #c69400; 
+    background-color: #c69400;
 }
 
 /* Footer */
 .footer {
-    background-color: var(--dark-color);
+    background-color: var(--primary-bg-color);
     color: #fff;
     text-align: center;
     padding: 1rem 0;
@@ -100,7 +99,7 @@ p {
 }
 
 .footer .social-links li a {
-    color: var(--primary-color);
+    color: var(--text-color);
     font-size: 1.2rem;
     transition: color 0.3s;
 }
@@ -124,6 +123,7 @@ p {
     0% { opacity: 1; }
     100% { opacity: 0; }
 }
+
 .fade-in {
     animation: fadeIn 2s ease-out;
     -webkit-animation: fadeIn 2s ease-out;
@@ -171,7 +171,7 @@ p {
 }
 
 .navbar.nav-active {
-    background-color: var(--dark-color); /* Change navbar color on scroll */
+    background-color: var(--primary-bg-color);
 }
 
 /* "Meet the Team" section styles */
@@ -182,6 +182,7 @@ p {
     overflow-x: auto;
     padding: 20px 0;
 }
+
 .team-container:focus {
     outline: none;
 }
@@ -193,21 +194,22 @@ p {
 .team-container img:focus {
     outline: 2px solid #f8b400;
 }
+
 .chef {
-    flex: 0 0 auto; /* Prevent chefs from stretching */
-    margin-right: 20px; /* Space to the right of each chef */
+    flex: 0 0 auto;
+    margin-right: 20px;
 }
 
 .chef img {
-    max-width: 100%; /* Ensure images are responsive */
-    max-height: 200px; /* Limit the height */
-    object-fit: cover; /* Ensure the aspect ratio is maintained without distortion */
-    border-radius: 50%; /* Circular images; remove if you prefer square/rectangle */
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .chef-name {
-    font-size: 1rem; /* Adjust font size as needed */
-    margin-top: 10px; /* Space between image and name */
+    font-size: 1rem;
+    margin-top: 10px;
 }
 
 /* Menu Section */
@@ -216,7 +218,7 @@ p {
 }
 
 .menu-item {
-    background-color: var(--dark-color);
+    background-color: var(--secondary-bg-color);
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 5px;
@@ -239,11 +241,32 @@ p {
 .menu-item p {
     margin: 0.5rem 0 0;
     font-size: 0.9rem;
-    color: var(--primary-color);
+    color: var(--text-color);
 }
 
 /* Menu Horizontal */
 .menu-category .row {
     flex-wrap: nowrap;
     overflow-x: auto;
+}
+
+/* Carousel Image Styles */
+.carousel-item {
+    transition: transform 0.5s ease, opacity 0.5s ease !important;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Carousel Item Transition */
+.carousel-item {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
 }

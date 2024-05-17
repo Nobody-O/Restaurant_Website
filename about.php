@@ -1,4 +1,17 @@
-<?php include 'includes/header.php'; ?>
+<?php
+include 'includes/header.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Restaurant Name</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 
 <div class="container mt-5">
     <h1>About Us</h1>
@@ -24,6 +37,12 @@
             </div>
             <div class="carousel-item">
                 <img src="assets/img/joch.jpg" class="d-block w-100" alt="Joch">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/restaurant-manager-chef.jpg" class="d-block w-100" alt="Restaurant Manager">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/Rodriko.png" class="d-block w-100" alt="Rodriko">
             </div>
         </div>
         <a class="carousel-control-prev" href="#teamCarousel" role="button" data-slide="prev">

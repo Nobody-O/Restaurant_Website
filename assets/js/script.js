@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, {
-        threshold: 0.5 // Adjust the threshold value based on when you want the animation to trigger
+        threshold: 0.5
     });
 
     document.querySelectorAll('.fade-in').forEach((element) => {
@@ -35,148 +35,106 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Main Page Carousel
-    const carouselImages = document.querySelectorAll('#carousel img');
-    let currentImageIndex = 0;
+    const mainCarouselImages = document.querySelectorAll('#homeCarousel .carousel-item');
+    let mainCurrentImageIndex = 0;
 
-    function showImage(index) {
-        carouselImages.forEach((img, i) => {
-            img.style.display = i === index ? 'block' : 'none';
+    function showMainImage(index) {
+        mainCarouselImages.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
         });
     }
 
-    function nextImage() {
-        currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
-        showImage(currentImageIndex);
+    function nextMainImage() {
+        mainCurrentImageIndex = (mainCurrentImageIndex + 1) % mainCarouselImages.length;
+        showMainImage(mainCurrentImageIndex);
     }
 
-    function prevImage() {
-        currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
-        showImage(currentImageIndex);
+    function prevMainImage() {
+        mainCurrentImageIndex = (mainCurrentImageIndex - 1 + mainCarouselImages.length) % mainCarouselImages.length;
+        showMainImage(mainCurrentImageIndex);
     }
 
-    document.querySelector('.carousel-control-prev').addEventListener('click', prevImage);
-    document.querySelector('.carousel-control-next').addEventListener('click', nextImage);
+    document.querySelector('.carousel-control-prev').addEventListener('click', prevMainImage);
+    document.querySelector('.carousel-control-next').addEventListener('click', nextMainImage);
 
-    // Auto-play
-    setInterval(nextImage, 3000); // Change image every 3 seconds
+    // Auto-play for Main Page Carousel
+    setInterval(nextMainImage, 3000);
 
     // About Us Carousel
-    const teamImages = document.querySelectorAll('.team-container img');
-    let currentTeamImageIndex = 0;
+    const teamCarouselImages = document.querySelectorAll('#teamCarousel .carousel-item');
+    let teamCurrentImageIndex = 0;
 
     function showTeamImage(index) {
-        teamImages.forEach((img, i) => {
-            img.style.display = i === index ? 'block' : 'none';
+        teamCarouselImages.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
         });
     }
 
     function nextTeamImage() {
-        currentTeamImageIndex = (currentTeamImageIndex + 1) % teamImages.length;
-        showTeamImage(currentTeamImageIndex);
+        teamCurrentImageIndex = (teamCurrentImageIndex + 1) % teamCarouselImages.length;
+        showTeamImage(teamCurrentImageIndex);
     }
 
     function prevTeamImage() {
-        currentTeamImageIndex = (currentTeamImageIndex - 1 + teamImages.length) % teamImages.length;
-        showTeamImage(currentTeamImageIndex);
+        teamCurrentImageIndex = (teamCurrentImageIndex - 1 + teamCarouselImages.length) % teamCarouselImages.length;
+        showTeamImage(teamCurrentImageIndex);
     }
 
-    document.querySelector('.team-control-prev').addEventListener('click', prevTeamImage);
-    document.querySelector('.team-control-next').addEventListener('click', nextTeamImage);
+    document.querySelector('#teamCarousel .carousel-control-prev').addEventListener('click', prevTeamImage);
+    document.querySelector('#teamCarousel .carousel-control-next').addEventListener('click', nextTeamImage);
 
-    // Auto-play
-    setInterval(nextTeamImage, 3000); // Change image every 3 seconds
-});
+    // Auto-play for Team Carousel
+    setInterval(nextTeamImage, 3000);
 
-// Simple Image Lightbox
-document.querySelectorAll('.menu-item img').forEach(image => {
-    image.addEventListener('click', () => {
-        const lightbox = document.createElement('div');
-        lightbox.id = 'lightbox';
-        document.body.appendChild(lightbox);
-        const img = document.createElement('img');
-        img.src = image.src;
-        while (lightbox.firstChild) {
-            lightbox.removeChild(lightbox.firstChild);
-        }
-        lightbox.appendChild(img);
-        lightbox.addEventListener('click', () => {
-            lightbox.remove();
-        });
-    });
-});
-
-// Contact Form Validation
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        let errorMessage = '';
-
-        if (!name) errorMessage = 'Name is required.';
-        else if (!email) errorMessage = 'Email is required.';
-        else if (!message) errorMessage = 'Message is required.';
-
-        if (errorMessage) {
-            const errorDiv = document.getElementById('error-message');
-            errorDiv.textContent = errorMessage;
-            errorDiv.style.display = 'block';
-        } else {
-            contactForm.submit();
-        }
-    });
-}
-
-// Sticky Navbar
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > navbar.offsetHeight + 150) {
-        navbar.classList.add('nav-active');
-    } else {
-        navbar.classList.remove('nav-active');
-    }
-});
-
-// Adding ARIA roles
-const carousel = document.getElementById('homeCarousel');
-carousel.setAttribute('role', 'region');
-carousel.setAttribute('aria-label', 'Image Carousel');
-
-// Adding keyboard controls
-document.querySelector('.carousel-control-prev').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-        prevImage();
-    }
-});
-
-document.querySelector('.carousel-control-next').addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-        nextImage();
-    }
-});
-
-document.querySelectorAll('.menu-item img').forEach(image => {
-    image.addEventListener('click', () => {
-        const lightbox = document.createElement('div');
-        lightbox.id = 'lightbox';
-        document.body.appendChild(lightbox);
-        const img = document.createElement('img');
-        img.src = image.src;
-        lightbox.appendChild(img);
-
-        // Close lightbox on click
-        lightbox.addEventListener('click', () => {
-            lightbox.remove();
-        });
-
-        // Close lightbox on 'Esc' key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
+    // Simple Image Lightbox
+    document.querySelectorAll('.menu-item img').forEach(image => {
+        image.addEventListener('click', () => {
+            const lightbox = document.createElement('div');
+            lightbox.id = 'lightbox';
+            document.body.appendChild(lightbox);
+            const img = document.createElement('img');
+            img.src = image.src;
+            lightbox.appendChild(img);
+            lightbox.addEventListener('click', () => {
                 lightbox.remove();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    lightbox.remove();
+                }
+            });
+        });
+    });
+
+    // Sticky Navbar
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > navbar.offsetHeight + 150) {
+            navbar.classList.add('nav-active');
+        } else {
+            navbar.classList.remove('nav-active');
+        }
+    });
+
+    // Adding ARIA roles
+    const homeCarousel = document.getElementById('homeCarousel');
+    if (homeCarousel) {
+        homeCarousel.setAttribute('role', 'region');
+        homeCarousel.setAttribute('aria-label', 'Image Carousel');
+    }
+
+    const teamCarousel = document.getElementById('teamCarousel');
+    if (teamCarousel) {
+        teamCarousel.setAttribute('role', 'region');
+        teamCarousel.setAttribute('aria-label', 'Team Image Carousel');
+    }
+
+    // Adding keyboard controls
+    document.querySelectorAll('.carousel-control-prev, .carousel-control-next').forEach(control => {
+        control.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                control.click();
             }
         });
     });
 });
-

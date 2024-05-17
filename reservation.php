@@ -23,6 +23,10 @@
             <label for="guests">Number of Guests</label>
             <input type="number" class="form-control" id="guests" name="guests" required>
         </div>
+        <div class="form-group">
+            <label for="special_request">Special Requests</label>
+            <textarea class="form-control" id="special_request" name="special_request"></textarea>
+        </div>
         <button type="submit" class="btn btn-primary">Submit Reservation</button>
     </form>
 </div>

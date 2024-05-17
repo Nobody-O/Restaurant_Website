@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
     $date = trim($_POST["date"]);
     $time = trim($_POST["time"]);
-    $guest_number = trim($_POST["guests"]);
+    $guests_number = trim($_POST["guests"]);
     $special_request = isset($_POST["special_request"]) ? trim($_POST["special_request"]) : "";
 
     // Basic validation
@@ -30,14 +30,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['error'] = 'Time is required.';
         header('Location: reservation.php');
         exit();
-    } elseif (empty($guest_number) || !is_numeric($guest_number)) {
+    } elseif (empty($guests_number) || !is_numeric($guests_number)) {
         $_SESSION['error'] = 'Number of guests is required and must be a number.';
         header('Location: reservation.php');
         exit();
     }
 
     // Prepare SQL statement to insert form data into the 'reservations' table
-    $sql = "INSERT INTO reservations (name, email, date, time, guest_number, special_request) VALUES (:name, :email, :date, :time, :guest_number, :special_request)";
+    $sql = "INSERT INTO reservations (name, email, date, time, guests_number, special_requests) VALUES (:name, :email, :date, :time, :guests_number, :special_requests)";
     
     try {
         $stmt = $pdo->prepare($sql);
@@ -47,17 +47,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':date', $date);
         $stmt->bindParam(':time', $time);
-        $stmt->bindParam(':guest_number', $guest_number, PDO::PARAM_INT);
-        $stmt->bindParam(':special_request', $special_request, PDO::PARAM_STR);
+        $stmt->bindParam(':guests_number', $guests_number, PDO::PARAM_INT);
+        $stmt->bindParam(':special_requests', $special_request, PDO::PARAM_STR);
         
         // Execute the statement
-        $stmt->execute();
-
-        // Redirect to a thank-you page with success message
-        $_SESSION['success'] = 'Your reservation has been successfully submitted.';
-        header('Location: thank-you.php');
-        exit();
-        
+        if ($stmt->execute()) {
+            // Redirect to a thank-you page with success message
+            $_SESSION['success'] = 'Your reservation has been successfully submitted.';
+            header('Location: thank-you.php');
+            exit();
+        } else {
+            $_SESSION['error'] = 'There was an error with the reservation submission.';
+            header('Location: reservation.php');
+            exit();
+        }
     } catch (PDOException $e) {
         // Log the error and set an error message
         error_log($e->getMessage());
