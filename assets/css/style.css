@@ -1,11 +1,12 @@
 /* Root Variables */
 :root {
-    --primary-color: #f0f0f0; /* Light color for text and elements */
-    --secondary-color: #333;
-    --light-color: #000; /* Black background color */
-    --dark-color: #1a1a1a; /* Darker color for sections */
+    --text-color: #f0f0f0; /* Light color for text and elements */
+    --background-color: #333;
+    --primary-bg-color: #000; /* Black background color */
+    --secondary-bg-color: #1a1a1a; /* Darker color for sections */
     --highlight-color: #f8b400; /* Gold color for highlights */
 }
+
 
 /* Basic Reset */
 * {
@@ -71,7 +72,7 @@ p {
 }
 
 .btn:hover {
-    background-color: darken(var(--highlight-color), 10%);
+    background-color: #c69400; 
 }
 
 /* Footer */
@@ -114,12 +115,18 @@ p {
     100% { opacity: 1; }
 }
 
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 @keyframes fadeOut {
     0% { opacity: 1; }
     100% { opacity: 0; }
 }
 .fade-in {
     animation: fadeIn 2s ease-out;
+    -webkit-animation: fadeIn 2s ease-out;
     opacity: 0;
     transition: opacity 2s ease-out;
 }
@@ -170,12 +177,22 @@ p {
 /* "Meet the Team" section styles */
 .team-container {
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    gap: 20px; /* Adjust space between images */
-    overflow-x: auto; /* Enable horizontal scroll */
-    padding: 20px 0; /* Padding above and below */
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+.team-container:focus {
+    outline: none;
 }
 
+.team-container img {
+    outline: 2px solid transparent;
+}
+
+.team-container img:focus {
+    outline: 2px solid #f8b400;
+}
 .chef {
     flex: 0 0 auto; /* Prevent chefs from stretching */
     margin-right: 20px; /* Space to the right of each chef */
