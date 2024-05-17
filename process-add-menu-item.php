@@ -19,7 +19,9 @@ try {
 
     $stmt->execute();
 
-    echo "Menu item added successfully.";
+    // Redirect to confirmation page
+    header('Location: confirmation.php');
+    exit();
 } catch(PDOException $e) {
     die("ERROR: Could not able to execute $sql. " . $e->getMessage());
 }
