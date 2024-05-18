@@ -88,7 +88,7 @@ include 'includes/header.php';
 <!-- Welcome Section -->
 <div class="container mt-5">
     <h1>Welcome to Our Restaurant</h1>
-    <p>This is a placeholder for the restaurant description. You can introduce your restaurant, your special dishes, and any other information you want your visitors to know.</p>
+    <p>This is a placeholder for the restaurant description. introduce restaurant,  special dishes, and any other information for visitors.</p>
 </div>
 
 <!-- Footer -->
